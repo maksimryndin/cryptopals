@@ -1,0 +1,79 @@
+Welcome to the challenges
+    
+    We can't introduce these any better than Maciej Ceglowski did, so read that blog post first.
+    
+    We've built a collection of exercises that demonstrate attacks on real-world crypto.
+    
+    This is a different way to learn about crypto than taking a class or reading a book. We give you problems to solve. They're derived from weaknesses in real-world systems and modern cryptographic constructions. We give you enough info to learn about the underlying crypto concepts yourself. When you're finished, you'll not only have learned a good deal about how cryptosystems are built, but you'll also understand how they're attacked.
+    What Are The Rules?
+    
+    There aren't any! For several years, we ran these challenges over email, and asked participants not to share their results. The honor system worked beautifully! But now we're ready to set aside the ceremony and just publish the challenges for everyone to work on.
+    How Much Math Do I Need To Know?
+    
+    If you have any trouble with the math in these problems, you should be able to find a local 9th grader to help you out. It turns out that many modern crypto attacks don't involve much hard math.
+    How Much Crypto Do I Need To Know?
+    
+    None. That's the point.
+    So What Do I Need To Know?
+    
+    You'll want to be able to code proficiently in any language. We've received submissions in C, C++, Python, Ruby, Perl, Visual Basic, X86 Assembly, Haskell, and Lisp. Surprise us with another language. Our friend Maciej says these challenges are a good way to learn a new language, so maybe now's the time to pick up Clojure or Rust.
+    What Should I Expect?
+    
+    Right now, we have eight sets. They get progressively harder. Again: these are based off real-world vulnerabilities. None of them are puzzles. They're not designed to trip you up. Some of the attacks are clever, though, and if you're not familiar with crypto cleverness... well, you should like solving puzzles. An appreciation for early-90's MTV hip-hop can't hurt either.
+    Can You Give Us A Long-Winded Indulgent Description For Why You'Ve Chosen To Do This?
+    
+    It turns out that we can.
+    
+    If you're not that familiar with crypto already, or if your familiarity comes mostly from things like Applied Cryptography, this fact may surprise you: most crypto is fatally broken. The systems we're relying on today that aren't known to be fatally broken are in a state of just waiting to be fatally broken. Nobody is sure that TLS 1.2 or SSH 2 or OTR are going to remain safe as designed.
+    
+    The current state of crypto software security is similar to the state of software security in the 1990s. Specifically: until around 1995, it was not common knowledge that software built by humans might have trouble counting. As a result, nobody could size a buffer properly, and humanity incurred billions of dollars in cleanup after a decade and a half of emergency fixes for memory corruption vulnerabilities.
+    
+    Counting is not a hard problem. But cryptography is. There are just a few things you can screw up to get the size of a buffer wrong. There are tens, probably hundreds, of obscure little things you can do to take a cryptosystem that should be secure even against an adversary with more CPU cores than there are atoms in the solar system, and make it solveable with a Perl script and 15 seconds. Don't take our word for it: do the challenges and you'll see.
+    
+    People know this already, but they don't really know it in their gut, and we think the reason for that is that very few people actually know how to implement the best-known attacks. So, mail us, and we'll give you a tour of them.
+    How do I start?
+    
+    Start here!
+    Who did this?
+    
+        Thomas Ptacek (@tqbf)
+        Sean Devlin (@spdevlin)
+        Alex Balducci (@iamalexalright)
+        Marcin Wielgoszewski (@marcinw)
+    
+    Cryptopals is maintained and expanded (from Set 8 on) by Sean Devlin, in conjunction with the Cryptography Services Team at NCC Group.
+    
+    We could not possibly have done this without the help of several other people. Roughly in order of influence:
+    
+        Nate Lawson taught us virtually everything we know about cryptography.
+        Trevor Perrin taught Nate some of that. I can tell you a pretty compelling story about how Trevor is the intellectual origin of every successful attack on TLS over the past 5 years.
+        Thai Duong and Juliano Rizzo are the godfathers of practical cryptographic software security. Several things in this challenge didn't make sense to us until after Thai and Juliano exploited them in mainstream software.
+    
+    Legal
+    
+    Individual exercise submissions are owned by their author, and may or may not be distributed under an open source license.
+
+    In Northern India, a concoction of seven different fungi could help to thin the smog that pervades the capital city with the worst air pollution in the world.
+T
+
+The onset of spring brings relief in more ways than one to Delhi. The air is cool and crisp, and with the milder weather come light showers that make the vegetation more lush. Around April, south-westerly winds sweep through the region, and the blanket of acrid smog that covers the city in the autumn and winter months begins to disperse. But it never really goes away.
+
+For the last 10 years, Shaheen Khokhar has witnessed this annual cycle as a resident of Gurugram, south-west of Delhi in the Northern Indian state of Haryana. Around October, when she drives into the city, the unnaturally grey, seemingly overcast skies creep up without warning. 'One minute, there's sunshine, and the next, you're engulfed in this dark, smoky haze,' she says. 'Every day, we see a deeply distressing, visual reminder of the pollution that we're forced to live with.'
+
+The effects of that pollution range from skin and eye irritation to severe neurological, cardiovascular and respiratory diseases, asthma, chronic obstructive pulmonary disease, bronchitis, lung capacity loss, emphysema, cancer, and increased mortality rates. Globally, outdoor air pollution kills around 4.2 million people each year.
+
+    The year-round average for PM2.5 pollution in New Delhi was the worst of any capital city in the world by a large margin
+
+In October and November, school children across Northern India, especially in India's capital city of New Delhi (which lies within the National Capital Territory of Delhi) and in the vicinity around Gurugram, have to contend with frequent disruptions. As the pollution worsens, schools shut for around two weeks every year. 'Our children have worn masks to school long before the Covid crisis,' says Khokhar.
+
+Twenty-one of the world's 30 cities with the worst levels of air pollution are in India, according to data compiled in the 2021 World Air Quality Report. Six Indian cities are in the top 10. New Delhi has the highest exposure to toxic air in the country. People in India had the fifth highest annual recordings of fine particulate matter (PM2.5), a particularly harmful form of air pollution. The year-round average for PM2.5 pollution in New Delhi was the worst of any capital city in the world by a large margin.
+
+You might also like:
+
+    The ingenious living bridges of India
+    The vast methane leaks seen from space
+    The idyllic Indian beach that vanished
+
+Industrial pollution and vehicular emissions are some of the greatest factors accounting for toxic air the whole year round, according to a report by the think tank Observer Research Foundation. But in the months of October and November, the pollution grows still more intense because of farmland fires. In 2019, Nasa's Earth observing satellites detected these fires from space.
+
+Exactly how much of the annual peak in air pollution is down to crop burning is uncertain official figures put it at around 10%, while other research suggests it could be higher. In Delhi, crop burning is thought to contribute as much as 42% of all particulate matter in the air. In the state of Haryana, observed PM2.5 and PM10 (a larger but also harmful form of particulate matter) rise to 2-3 times higher than National Ambient Air Quality Standard limits during the autumn burning season. People from all age groups experience increased respiratory illnesses during this time of year.
