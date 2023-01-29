@@ -8,8 +8,8 @@ pub fn filename_fullpath(filename: &str) -> PathBuf {
         .collect()
 }
 
-pub fn read_b64_encoded(filename: &str) -> Vec<u8> {
-    let encoded: Vec<String> = read_to_string(filename_fullpath(filename))
+pub fn read_b64_encoded(filename: PathBuf) -> Vec<u8> {
+    let encoded: Vec<String> = read_to_string(filename)
         .expect("cannot read file")
         .split_whitespace()
         .map(|s| s.to_string())

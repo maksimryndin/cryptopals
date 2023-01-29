@@ -53,9 +53,14 @@ pub fn hamming_distance(first: &[u8], second: &[u8]) -> usize {
         .sum()
 }
 
-fn score_keysize_bytes(encrypted: &[u8], keysize: usize) -> f64 {
-    hamming_distance(&encrypted[..keysize], &encrypted[keysize..2 * keysize]) as f64
-        / keysize as f64
+pub fn score_keysize_bytes(encrypted: &[u8], keysize: usize) -> f64 {
+    let dist = encrypted
+        .chunks_exact(keysize)
+        .zip(encrypted.chunks_exact(keysize).skip(1))
+        .fold(0, |score, (prev_block, curr_block)| {
+            score + hamming_distance(prev_block, curr_block)
+        });
+    dist as f64 / keysize as f64
 }
 
 pub fn get_keysizes(encrypted: &[u8]) -> Vec<(usize, f64)> {
@@ -88,14 +93,17 @@ fn transpose_by_keysize<'a>(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::helpers::read_b64_encoded;
+    use crate::helpers::{filename_fullpath, read_b64_encoded};
 
     #[test]
     fn vigenere() {
-        let decoded = read_b64_encoded("break_repeating_key_xor.txt");
+        let file = filename_fullpath("break_repeating_key_xor.txt");
+        let decoded = read_b64_encoded(file);
         let (key, text) = vigenere_decipher(&decoded);
         println!("{text}");
         assert_eq!("Terminator X: Bring the noise".to_string(), key);
+        println!("key len {}", key.len());
+        println!("{:?}", get_keysizes(&decoded));
     }
 
     #[test]

@@ -5,11 +5,9 @@ const BLOCK_SIZE: usize = 16;
 
 pub fn detect_aes_ecb_pattern(data: &[u8]) -> bool {
     let mut set = HashSet::with_capacity(data.len() / BLOCK_SIZE);
-    (0..data.len())
-        .step_by(BLOCK_SIZE)
-        .fold(false, |is_detected, i| {
-            is_detected || !set.insert(&data[i..i + BLOCK_SIZE])
-        })
+    data.chunks(BLOCK_SIZE).fold(false, |is_detected, block| {
+        is_detected || !set.insert(block)
+    })
 }
 
 pub fn detect_aes_ecb<'a>(data: &'a Vec<Vec<u8>>) -> &'a [u8] {

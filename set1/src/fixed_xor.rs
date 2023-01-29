@@ -1,10 +1,16 @@
 /// https://cryptopals.com/sets/1/challenges/2
 
-pub fn xor(a: &[u8], b: &[u8]) -> Vec<u8> {
+pub fn xor_inplace(a: &mut [u8], b: &[u8]) {
     if a.len() != b.len() {
         panic!("buffers should have equal length");
     }
-    a.iter().zip(b.iter()).map(|(&x, &y)| x ^ y).collect()
+    a.iter_mut().zip(b.iter()).for_each(|(x, &y)| *x = *x ^ y);
+}
+
+pub fn xor(a: &[u8], b: &[u8]) -> Vec<u8> {
+    let mut buffer = a.to_vec();
+    xor_inplace(&mut buffer, b);
+    buffer
 }
 
 #[cfg(test)]
