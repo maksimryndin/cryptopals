@@ -5,11 +5,17 @@ pub const BLOCK_SIZE: usize = 16;
 
 fn encrypt_userdata(userdata: &str, key: [u8; BLOCK_SIZE], iv: [u8; BLOCK_SIZE]) -> Vec<u8> {
     let input = userdata.replace(";", "%3B").replace("=", "%3D");
-    let plaintext = format!("comment1=cooking%20MCs;userdata={input};comment2=%20like%20a%20pound%20of%20bacon");
-    cbc(plaintext.as_bytes(), key, iv) 
+    let plaintext = format!(
+        "comment1=cooking%20MCs;userdata={input};comment2=%20like%20a%20pound%20of%20bacon"
+    );
+    cbc(plaintext.as_bytes(), key, iv)
 }
 
-fn check_admin(ciphertext: &[u8], key: [u8; BLOCK_SIZE], iv: [u8; BLOCK_SIZE]) -> Result<bool, String> {
+fn check_admin(
+    ciphertext: &[u8],
+    key: [u8; BLOCK_SIZE],
+    iv: [u8; BLOCK_SIZE],
+) -> Result<bool, String> {
     let mut decrypted = ciphertext.to_vec();
     cbc_decrypt_inplace(&mut decrypted, key, iv);
     let without_pad = validate_pkcs7_padding(&decrypted)?;
@@ -33,9 +39,17 @@ mod tests {
     #[test]
     fn flipbit() {
         println!("original `=`: {:#010b}", b'=');
-        println!("flipping last bit: {:#010b}, as char {}", b'=' ^ 1, (b'=' ^ 1) as char);
+        println!(
+            "flipping last bit: {:#010b}, as char {}",
+            b'=' ^ 1,
+            (b'=' ^ 1) as char
+        );
         assert_eq!('<', (b'=' ^ 1) as char);
-        println!("flipping second from the end bit: {:#010b}, as char {}", b'=' ^ 1 << 1, (b'=' ^ 1 << 1) as char);
+        println!(
+            "flipping second from the end bit: {:#010b}, as char {}",
+            b'=' ^ 1 << 1,
+            (b'=' ^ 1 << 1) as char
+        );
         assert_eq!('?', (b'=' ^ 1 << 1) as char);
     }
 
@@ -61,9 +75,12 @@ mod tests {
         assert_eq!(BLOCK_SIZE, block_size);
 
         fn discover_prefix_len(block_size: usize) -> usize {
-
             fn get_common_len<'a>(first: &[u8], second: &[u8]) -> usize {
-                first.iter().zip(second.iter()).take_while(|(&a, &b)| a == b).count()
+                first
+                    .iter()
+                    .zip(second.iter())
+                    .take_while(|(&a, &b)| a == b)
+                    .count()
             }
 
             let key = random_aes_key();
@@ -91,7 +108,7 @@ mod tests {
         // so our input starts the third block
         // we can flip bits for corresponding bytes in the previous block which is xored
         // with the decrypted third block
-        
+
         let input = format!("{}admin{}true", (b';' ^ 1) as char, (b'=' ^ 1) as char);
         let mut encrypted = encrypt_userdata(&input, key, iv);
         encrypted[16] = encrypted[16] ^ 1;

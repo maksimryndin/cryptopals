@@ -3,7 +3,8 @@ use crate::pkcs7::pad_pkcs7;
 use aes::cipher::{generic_array::GenericArray, BlockDecrypt, BlockEncrypt, KeyInit};
 use aes::Aes128;
 use set1::fixed_xor::xor_inplace;
-const BLOCK_SIZE: usize = 16;
+
+pub const BLOCK_SIZE: usize = 16;
 
 pub fn cbc_inplace(data: &mut [u8], key: [u8; BLOCK_SIZE], iv: [u8; BLOCK_SIZE]) {
     let key = GenericArray::from(key);

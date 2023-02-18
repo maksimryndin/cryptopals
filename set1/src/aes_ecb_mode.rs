@@ -19,7 +19,11 @@ pub fn aes_ecb_decrypt(encrypted: &mut [u8], key: [u8; BLOCK_SIZE]) {
 
 pub fn remove_pad(decrypted: &[u8]) -> &[u8] {
     if let Some(pad_value) = decrypted.last() {
-        let pad_length = decrypted.iter().rev().take_while(|&b| b == pad_value).count();
+        let pad_length = decrypted
+            .iter()
+            .rev()
+            .take_while(|&b| b == pad_value)
+            .count();
         let pad_value = *pad_value as usize;
         if pad_value == pad_length {
             &decrypted[..decrypted.len() - pad_length]
