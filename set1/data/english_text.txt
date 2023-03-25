@@ -77,3 +77,104 @@ You might also like:
 Industrial pollution and vehicular emissions are some of the greatest factors accounting for toxic air the whole year round, according to a report by the think tank Observer Research Foundation. But in the months of October and November, the pollution grows still more intense because of farmland fires. In 2019, Nasa's Earth observing satellites detected these fires from space.
 
 Exactly how much of the annual peak in air pollution is down to crop burning is uncertain official figures put it at around 10%, while other research suggests it could be higher. In Delhi, crop burning is thought to contribute as much as 42% of all particulate matter in the air. In the state of Haryana, observed PM2.5 and PM10 (a larger but also harmful form of particulate matter) rise to 2-3 times higher than National Ambient Air Quality Standard limits during the autumn burning season. People from all age groups experience increased respiratory illnesses during this time of year.
+
+ A smart contract is a computer program or a transaction protocol that is intended to automatically execute, control or document events and actions according to the terms of a contract or an agreement.[1][2][3][4] The objectives of smart contracts are the reduction of need for trusted intermediators, arbitration costs, and fraud losses, as well as the reduction of malicious and accidental exceptions.[5][2] Smart contracts are commonly associated with cryptocurrencies, and the smart contracts introduced by Ethereum are generally considered a fundamental building block for decentralized finance (DeFi) and NFT applications.[6][7]
+
+Vending machines are mentioned as the oldest piece of technology equivalent to smart contract implementation.[3] The original Ethereum white paper by Vitalik Buterin in 2014[8] describes the Bitcoin protocol as a weak version of the smart contract concept as originally defined by Nick Szabo, and proposed a stronger version based on the Solidity language, which is Turing complete. Since Bitcoin,[clarification needed] various cryptocurrencies have supported programming languages which allow for more advanced smart contracts between untrusted parties.[9]
+
+A smart contract should not be confused with a smart legal contract, which refers to a traditional, natural-language, legally-binding agreement that has selected terms expressed and implemented in machine-readable code.[10][11][12]
+Etymology
+
+Smart contracts were first proposed in the early 1990s by Nick Szabo, who coined the term, using it to refer to "a set of promises, specified in digital form, including protocols within which the parties perform on these promises".[13][14] In 1998, the term was used to describe objects in rights management service layer of the system The Stanford Infobus, which was a part of Stanford Digital Library Project.[1]
+Legal status of smart contracts
+See also: Regulation of algorithms
+
+A smart contract does not typically constitute a valid binding agreement at law,[15] although a smart legal contract is intended to be both executable by a machine and legally enforceable.[16] [10][11][12]
+
+Smart contracts are not legal agreements, but rather means of performing obligations deriving from agreements that can be executed automatically by a computer program or a transaction protocol,[15] such as technological means for the automation of payment obligations[17] or obligations consisting in the transfer of tokens or cryptocurrencies. Some scholars have argued that the imperative or declarative nature of programming languages would impact the legal validity of smart contracts.[18]
+
+Since the 2015 launch of the Ethereum blockchain,[19] the term "smart contract" has been more specifically applied toward the notion of general purpose computation that takes place on a blockchain or distributed ledger. The US National Institute of Standards and Technology describes a "smart contract" as a "collection of code and data (sometimes referred to as functions and state) that is deployed using cryptographically signed transactions on the blockchain network".[20] In this interpretation, used for example by the Ethereum Foundation[8] or IBM,[21] a smart contract is not necessarily related to the classical concept of a contract, but can be any kind of computer program. A smart contract also can be regarded as a secured stored procedure, as its execution and codified effects (like the transfer of value between parties) are strictly enforced and cannot be manipulated; after a transaction with specific contract details is stored into a blockchain or distributed ledger, it cannot be changed. That's because the actual execution of contracts is controlled and audited by the platform, not by arbitrary server-side programs connecting to the platform.[22][23]
+
+In 2017, by implementing the Decree on Development of Digital Economy, Belarus has become the first-ever[dubious – discuss] country to legalize smart contracts. Belarusian lawyer Denis Aleinikov is considered to be the author of a smart contract legal concept introduced by the decree.[24][better source needed]
+
+In 2018, a US Senate report said: "While smart contracts might sound new, the concept is rooted in basic contract law. Usually, the judicial system adjudicates contractual disputes and enforces terms, but it is also common to have another arbitration method, especially for international transactions. With smart contracts, a program enforces the contract built into the code."[25] A number of states in the US have passed legislation on the use of smart contracts, such as Arizona,[26] Nevada,[27] Tennessee,[28] and Wyoming.[29] And in April 2020, Iowa's House of Representatives passed a bill legally recognizing smart contracts in the state.[30]
+
+In April 2021, the UK Jurisdiction Taskforce (UKJT) published the Digital Dispute Resolution Rules (the Digital DR Rules) to help enable the rapid resolution of blockchain and crypto legal disputes in Britain.[31]
+Workings
+
+Similar to a transfer of value on a blockchain, deployment of a smart contract on a blockchain occurs by sending a transaction from a wallet for the blockchain.[32] The transaction includes the compiled code for the smart contract as well as a special receiver address.[32] That transaction must then be included in a block that is added to the blockchain, at which point the smart contract's code will execute to establish the initial state of the smart contract.[32] Byzantine fault-tolerant algorithms secure the smart contract in a decentralized way from attempts to tamper with it. Once a smart contract is deployed, it cannot be updated.[33] Smart contracts on a blockchain can store arbitrary state and execute arbitrary computations. End clients interact with a smart contract through transactions. Such transactions with a smart contract can invoke other smart contracts. These transactions might result in changing the state and sending coins from one smart contract to another or from one account to another.[33]
+
+The most popular blockchain for running smart contracts is Ethereum.[34] On Ethereum, smart contracts are typically written in a Turing-complete programming language called Solidity,[35] and compiled into low-level bytecode to be executed by the Ethereum Virtual Machine.[36] Due to the halting problem and other security problems, Turing-completeness is considered to be a risk and is deliberately avoided by languages like Vyper.[37][38] Some of the other smart contract programming languages missing Turing-completeness are Simplicity, Scilla, Ivy and Bitcoin Script.[38] However, measurements in 2020 using regular expressions showed that only 35.3% of 53,757 Ethereum smart contracts at that time included recursions and loops — constructs connected to the halting problem.[39]
+
+Several languages are designed to enable formal verification: Bamboo, IELE, Simplicity, Michelson (can be verified with Coq),[38] Liquidity (compiles to Michelson), Scilla, DAML and Pact.[37]
+Notable examples of blockchain platforms supporting smart contracts include the following: Name 	Description
+Ethereum 	Implements a Turing-complete language on its blockchain, a prominent smart contract framework[40]
+Bitcoin 	Provides a Turing-incomplete script language that allows the creation of custom smart contracts on top of Bitcoin like multisignature accounts, payment channels, escrows, time locks, atomic cross-chain trading, oracles, or multi-party lottery with no operator.[41]
+Binance Smart Chain 	A blockchain platform for smart contracts
+Cardano 	A blockchain platform for smart contracts, using proof of stake
+Solana 	A blockchain platform for smart contracts
+Avalanche 	A blockchain platform for smart contracts
+Tron 	A blockchain platform for smart contracts
+EOS.IO 	A blockchain platform for smart contracts
+Tezos 	A blockchain platform modifying its own set of rules with minimal disruption to the network through an on-chain governance model
+
+Processes on a blockchain are generally deterministic in order to ensure Byzantine fault-tolerance.[42] Nevertheless, real world application of smart contracts, such as lotteries and casinos, require secure randomness.[43] In fact, blockchain technology reduces the costs for conducting of a lottery and is therefore beneficial for the participants. Randomness on blockchain can be implemented by using block hashes or timestamps, oracles, commitment schemes, special smart contracts like RANDAO[44][45] and Quanta, as well as sequences from mixed strategy Nash equilibria.[42]
+Applications
+
+In 1998, Szabo proposed that smart contract infrastructure can be implemented by replicated asset registries and contract execution using cryptographic hash chains and Byzantine fault-tolerant replication.[46] Askemos implemented this approach in 2002[47][48] using Scheme (later adding SQLite[49][50]) as the contract script language.[51]
+
+One proposal for using bitcoin for replicated asset registration and contract execution is called "colored coins".[52] Replicated titles for potentially arbitrary forms of property, along with replicated contract execution, are implemented in different projects.
+
+As of 2015, UBS was experimenting with "smart bonds" that use the bitcoin blockchain[53] in which payment streams could hypothetically be fully automated, creating a self-paying instrument.[54]
+
+Inheritance wishes could hypothetically be implemented automatically upon registration of a death certificate by means of smart contracts.[according to whom?][55][56] Birth certificates can also work together with smart contracts.[57][58]
+
+Chris Snook of Inc.com suggests smart contracts could also be used to handle real estate transactions and could be used in the field of title records and in the public register.[59][60][61][62][63]
+
+Seth Oranburg and Liya Palagashvili argue that smart contracts could also be used in employment contracts, especially temporary employment contracts, which according to them would benefit the employer.[64][65]
+
+Smart contract on block chain technology for smart villages[66]
+Security issues
+
+A blockchain-based smart contract is visible to all users of said blockchain. However, this leads to a situation where bugs, including security holes, are visible to all yet may not be quickly fixed.[67] Such an attack, difficult to fix quickly, was successfully executed on The DAO in June 2016, draining approximately US$50 million worth of Ether at the time, while developers attempted to come to a solution that would gain consensus.[68] The DAO program had a time delay in place before the hacker could remove the funds; a hard fork of the Ethereum software was done to claw back the funds from the attacker before the time limit expired.[69] Other high-profile attacks include the Parity multisignature wallet attacks, and an integer underflow/overflow attack (2018), totaling over US$184 million.[70]
+
+Issues in Ethereum smart contracts, in particular, include ambiguities and easy-but-insecure constructs in its contract language Solidity, compiler bugs, Ethereum Virtual Machine bugs, attacks on the blockchain network, the immutability of bugs and that there is no central source documenting known vulnerabilities, attacks and problematic constructs.[40]
+Difference from smart legal contracts
+
+Smart legal contracts are distinct from smart contracts. As mentioned above, a smart contract is not necessarily legally enforceable as a contract. On the other hand, a smart legal contract has all the elements of a legally enforceable contract in the jurisdiction in which it can be enforced and it can be enforced by a court or tribunal. Therefore, while every smart legal contract will contain some elements of a smart contract, not every smart contract will be a smart legal contract.[71]
+
+There is no formal definition of a smart legal contract in the legal industry.[72]
+
+A Ricardian contract is a type of smart legal contract. 
+
+GO placidly amid the noise and haste, and remember what peace there may be in silence. As far as possible without surrender be on good terms with all persons. Speak your truth quietly and clearly; and listen to others, even the dull and ignorant; they too have their story. Avoid loud and aggressive persons, they are vexatious to the spirit. If you compare yourself with other, you may become vain and bitter; for always there will be greater and lesser persons than yourself. Enjoy your achievements as well as your plans. Keep interested in your own career, however humble; it is a real possession in the changing fortunes of time. Exercise caution in your business affairs; for the world is full of trickery. But let this not blind you to what virtue there is; many persons strive for high ideals; and everywhere life is full of heroism. Be yourself. Especially, do not feign affection. Neither be cynical about love; for in the face of all aridity and disenchantment it is perennial as the grass. Take kindly the counsel of the years, gracefully surrendering the things of youth. Nurture strength of spirit to shield you in sudden misfortune. But do not distress yourself with imaginings. Many fears are born of fatigue and loneliness. Beyond a wholesome discipline, be gentle with yourself. You are a child of the universe, no less than the trees and the stars; you have a right to be here. And whether or not it is clear to you, no doubt the universe is unfolding as it should. Therefore be at peace with God, whatever you conceive Him to be, and whatever your labors and aspirations, in the noisy confusion of life keep peace with your soul. With all its sham, drudgery and broken dreams, it is still a beautiful world. Be careful. Strive to be happy.
+
+Tiger! Tiger! burning bright
+In the forests of the night,
+What immortal hand or eye
+Could frame thy fearful symmetry?
+
+In what distant deeps or skies
+Burnt the fire of thine eyes?
+On what wings dare he aspire?
+What the hand dare seize the fire?
+
+And what shoulder, and what art,
+Could twist the sinews of thy heart?
+And when thy heart began to beat,
+What dread hand? and what dread feet?
+
+What the hammer? what the chain?
+In what furnace was thy brain?
+What the anvil? what dread grasp
+Dare its deadly terrors clasp?
+
+When the stars threw down their spears,
+And watered heaven with their tears,
+Did he smile his work to see?
+Did he who made the Lamb make thee?
+
+Tiger! Tiger! burning bright
+In the forests of the night,
+What immortal hand or eye
+Dare frame thy fearful symmetry?

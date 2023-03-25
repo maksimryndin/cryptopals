@@ -131,12 +131,9 @@ pub fn english_characters_counter(text: &[u8]) -> EnglishCounter {
 pub fn score_english_text(text: &[u8]) -> f32 {
     let benchmark_frequencies = get_frequencies();
     let text_frequencies = english_characters_counter(text).frequencies();
-    1. / (b'a'..=b'z')
-        .into_iter()
-        .fold(0.0, |acc, c| {
-            acc + (benchmark_frequencies[c as char] - text_frequencies[c as char]).powi(2)
-        })
-        .sqrt()
+    -(0_u8..=255).into_iter().fold(0.0, |acc, c| {
+        acc + (benchmark_frequencies[c as char] - text_frequencies[c as char]).abs()
+    })
 }
 
 pub fn apply_single_byte_key<F>(key: u8, data: &mut [u8], application: F)
@@ -207,7 +204,7 @@ mod tests {
     }
 
     #[test]
-    fn single_byte_xor_cipher_zz() {
+    fn single_byte_xor_cipher() {
         let text =
             hex_str2bytes("1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736");
         assert_eq!(
