@@ -1,0 +1,16 @@
+[package]
+name = "set4"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+sha-1 = {version = "0.10.1", features = ["compress"]}
+digest = "0.10.4"
+block-buffer = "0.10.4"
+set1 = {path = "../set1"}
+set2 = {path = "../set2"}
+
+[dev-dependencies]
+getrandom = "0.2"
+set3 = {path = "../set3"}

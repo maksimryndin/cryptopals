@@ -5,7 +5,7 @@ use std::collections::HashMap;
 
 const BLOCK_SIZE: usize = 16;
 
-fn parse_cookie(cookie: &str) -> HashMap<String, String> {
+pub fn parse_cookie(cookie: &str) -> HashMap<String, String> {
     cookie
         .split('&')
         .map(|kv| kv.split_once('=').unwrap())

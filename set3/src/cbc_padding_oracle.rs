@@ -75,11 +75,11 @@ mod tests {
     fn test_xor_padder_error_cases() {
         let mut destination = vec![1_u8, 2, 3];
         let plaintext_reversed = vec![5_u8, 4, 3, 2, 1];
-        assert!(xor_pad(&mut destination, &plaintext_reversed, 4).is_err());
+        assert!(xor_pad(&mut destination, &plaintext_reversed, 5).is_err());
 
         let mut destination = vec![1_u8, 2, 3, 4];
         let plaintext_reversed = vec![5_u8, 4, 3];
-        assert!(xor_pad(&mut destination, &plaintext_reversed, 4).is_err());
+        assert!(xor_pad(&mut destination, &plaintext_reversed, 5).is_err());
     }
 
     #[test]
